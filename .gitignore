@@ -1,0 +1,14 @@
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# IDEs
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom & Jerry Maze Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Tom & Jerry: Greedy Search Visualization</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label>Theme:</label>
+                <select id="theme-select">
+                    <option value="candy">Candy Pop</option>
+                    <option value="cyberpunk">Neon Cyberpunk</option>
+                    <option value="forest">Secret Forest</option>
+                    <option value="blueprint" selected>Blueprint</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Algorithm:</label>
+                <select id="algo-select">
+                    <option value="greedy">Greedy Best-First</option>
+                    <option value="bfs">Breadth-First Search (BFS)</option>
+                    <option value="dfs">Depth-First Search (DFS)</option>
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                    <option value="astar">A* Search</option>
+                    <option value="bidirectional">Bidirectional BFS</option>
+                    <option value="swarm">Swarm Intelligence (ACO)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Speed:</label>
+                <input type="range" id="speed-range" min="1" max="50" value="10">
+            </div>
+            <div class="buttons">
+                <button id="solve-btn">Start Simulation</button>
+                <button id="reset-btn">New Maze</button>
+            </div>
+        </div>
+        <canvas id="game-canvas" width="600" height="600"></canvas>
+        <div id="status">Status: Ready</div>
+        <div id="timer"
+            style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 10px 20px; border-radius: 30px; color: #6c5ce7; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            Time: 0.00s</div>
+
+        <div id="leaderboard"
+            style="position: absolute; top: 80px; right: 20px; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 250px; display: none;">
+            <h3 style="margin: 0 0 10px 0; color: #6c5ce7; border-bottom: 2px solid #dfe6e9; padding-bottom: 5px;">
+                Results</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                <thead>
+                    <tr style="text-align: left; color: #636e72;">
+                        <th>Algorithm</th>
+                        <th style="text-align: right;">Time</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>
